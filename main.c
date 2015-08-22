@@ -30,7 +30,7 @@ int main ()
  	while(1) 
  	{
  		PORTB ^= 0x20;
-  		// set Pin 5 of PORTB at high
+  		// toggle Pin 5 of PORTB high/low
     	delay_func(DELAY_MS); 
   		// delay
   	}
