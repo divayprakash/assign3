@@ -1,7 +1,7 @@
 //**********Header files**********//
 #include <stdint.h>
 #include <avr/interrupt.h>
-//********************//
+//**********////////////**********//
 
 
 //**********Register declarations for timer**********//
@@ -20,7 +20,7 @@
 #define OCR1A _SFR_MEM16(0x88)
 #define TIMSK1 _SFR_MEM8(0x6F)
 #define OCIE1A 1
-//********************//
+//******************************************************************//
 
 
 //**********Macros for setting register values and offsets**********//
@@ -30,14 +30,16 @@
 #define _MMIO_BYTE(mem_addr) (*(volatile uint8_t *)(mem_addr))
 #define _SFR_IO8(io_addr) _MMIO_BYTE((io_addr) + __SFR_OFFSET)
 #define __SFR_OFFSET 0x20
-//********************//
+//******************************************************************//
+
 
 //**********Define output port **********//
 #define DDRB _SFR_IO8(0x04)
 // define DDRB register
 #define PORTB _SFR_IO8(0x05)
 // define PORTB
-//********************//
+//***************************************//
+
 
 //**********Function to setup timer**********//
 void setup_delay() 
@@ -58,7 +60,8 @@ void setup_delay()
   	// enable timer compare interrupt
   	TIMSK1 |= (1 << OCIE1A);
 }
-//********************//
+//*******************************************//
+
 
 //**********Interrupt service routine**********//
 ISR(TIMER1_COMPA_vect)
@@ -68,7 +71,7 @@ ISR(TIMER1_COMPA_vect)
   	TCNT1 = 0;
   	// Reset Timer1 Count Register
 }
-//********************//
+//*********************************************//
 
 
 //**********Main function**********//
@@ -81,4 +84,4 @@ int main (void)
 	while (1) {}
 	return 0;
 }
-//********************//
+//*********************************//
