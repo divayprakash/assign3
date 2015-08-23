@@ -1,7 +1,7 @@
 //**********Header files**********//
 #include <stdint.h>
 #include <avr/interrupt.h>
-//**********////////////**********//
+//********************************//
 
 
 //**********Register declarations for timer**********//
@@ -20,7 +20,7 @@
 #define OCR1A _SFR_MEM16(0x88)
 #define TIMSK1 _SFR_MEM8(0x6F)
 #define OCIE1A 1
-//******************************************************************//
+//***************************************************//
 
 
 //**********Macros for setting register values and offsets**********//
